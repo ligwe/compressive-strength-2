@@ -1,0 +1,125 @@
+{
+  "project_title": "Concrete Strength Prediction and Mix Optimization",
+  "target_name": "Compressive Strength",
+  "raw_features": [
+    "Cement",
+    "Water",
+    "Sand",
+    "Granite",
+    "Curing Age"
+  ],
+  "engineered_features": [
+    "Cement",
+    "Water",
+    "Sand",
+    "Granite",
+    "Curing Age",
+    "WC_Ratio",
+    "Total_Aggregate",
+    "Fine_Coarse_Ratio",
+    "Total_Listed_Mass"
+  ],
+  "optimization_ages": [
+    7.0,
+    14.0,
+    21.0,
+    28.0
+  ],
+  "optimization_bounds": [
+    [
+      288.75,
+      431.25
+    ],
+    [
+      435.0,
+      928.75
+    ],
+    [
+      810.0,
+      1517.0
+    ],
+    [
+      0.48168109668109665,
+      0.6544232965359726
+    ]
+  ],
+  "feasibility_ranges": {
+    "aggregate_to_cement": [
+      3.1079499596448747,
+      7.265331278890601
+    ],
+    "fine_coarse": [
+      0.37193866374589263,
+      0.8273619330320848
+    ],
+    "total_mass": [
+      1431.0,
+      3128.3
+    ],
+    "wc_ratio": [
+      0.44655311355311356,
+      0.6905188679245283
+    ]
+  },
+  "physical_defaults": {
+    "Cement": 340.0,
+    "Water": 195.45,
+    "Sand": 680.0,
+    "Granite": 1200.0,
+    "Curing Age": 21.0
+  },
+  "physical_ranges": {
+    "Cement": {
+      "min": 260.0,
+      "max": 490.0,
+      "q05": 288.75,
+      "q95": 431.25
+    },
+    "Water": {
+      "min": 132.0,
+      "max": 267.3,
+      "q05": 150.0,
+      "q95": 240.5
+    },
+    "Sand": {
+      "min": 310.0,
+      "max": 1008.0,
+      "q05": 435.0,
+      "q95": 928.75
+    },
+    "Granite": {
+      "min": 465.0,
+      "max": 1630.0,
+      "q05": 810.0,
+      "q95": 1517.0
+    },
+    "Curing Age": {
+      "min": 7.0,
+      "max": 28.0,
+      "q05": 7.0,
+      "q95": 28.0
+    }
+  },
+  "random_state": 42,
+  "test_metrics": {
+    "XGBoost": {
+      "R2": 0.8044576681953644,
+      "MAE": 2.0403782268323396,
+      "RMSE": 2.6173339922755448,
+      "MAPE (%)": 9.218520821192461
+    },
+    "SVR": {
+      "R2": 0.7369878091356216,
+      "MAE": 2.351827682213839,
+      "RMSE": 3.0354752077783385,
+      "MAPE (%)": 10.657665166303278
+    },
+    "ANN": {
+      "R2": 0.7362544345344241,
+      "MAE": 2.369513070463118,
+      "RMSE": 3.0397042717393985,
+      "MAPE (%)": 10.645164177059234
+    }
+  },
+  "strength_unit_note": "Predictions use the same unit as the Compressive Strength target used to train the models."
+}
